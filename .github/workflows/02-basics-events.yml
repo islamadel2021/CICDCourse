@@ -1,4 +1,4 @@
-name: 01 basics first workflow
+name: 02-basics-events
 
 on: [push, pull_request]
 
