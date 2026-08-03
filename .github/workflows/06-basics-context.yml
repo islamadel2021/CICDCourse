@@ -1,0 +1,11 @@
+name: 06 basics context
+
+on:
+  workflow_dispatch:
+
+jobs:
+  print-hello-world:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Hello World
+        run: echo ${{ github.event_name }}

@@ -1,9 +1,19 @@
 name: 03-basics-events-filters
 
 on:
-  pull_request:
-    types:
-      - closed
+  # pull_request:
+  #   types:
+  #     - closed
+  push:
+    # tags:
+    #   - v2
+
+    # tags-ignore:
+    #   - v3
+    # paths:
+    #   - "CICDCourse/index.html"
+    paths-ignore:
+      - "CICDCourse/index.html"
 
 jobs:
   print-hello-world:
