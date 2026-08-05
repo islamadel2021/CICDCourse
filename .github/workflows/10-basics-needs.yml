@@ -1,0 +1,24 @@
+name: 10 basics needs
+run-name: 10 basics needs ${{ github.run_number }}
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: build project
+        run: echo "build"
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: test project
+        run: echo "test"
+  deploy:
+    needs: [build, test]
+    runs-on: ubuntu-latest
+    steps:
+      - name: deploy project
+        run: echo "deploy"
