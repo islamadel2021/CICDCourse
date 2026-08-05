@@ -1,0 +1,19 @@
+name: 08 basics variables
+run-name: 08 basics variables ${{ github.run_number }}
+
+env:
+  HELLO_WORLD: "Hello World"
+  GOODBYE_WORLD: "Goodbye World"
+
+on:
+  workflow_dispatch:
+
+jobs:
+  print-hello-world:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Hello World
+        run: echo ${{ env.HELLO_WORLD }}
+
+      - name: Print Goodbye World
+        run: echo ${{ env.GOODBYE_WORLD }}

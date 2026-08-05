@@ -1,5 +1,5 @@
 name: 06 basics context
-
+run-name: 06 basics context ${{ github.run_number }}
 on:
   workflow_dispatch:
 

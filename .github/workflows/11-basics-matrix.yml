@@ -1,0 +1,23 @@
+name: 11 basics matrix
+run-name: 11 basics matrix ${{ github.run_number }}
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      max-parallel: 2
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        php_version: [7.4, 8.0]
+        exclude:
+          - os: windows-latest
+            php_version: 7.4
+        include:
+          - os: macos-latest
+            php_version: 8.4
+    steps:
+      - name: build project
+        run: echo "build (${{ matrix.os }}) with PHP ${{ matrix.php_version }}"

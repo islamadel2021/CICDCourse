@@ -1,0 +1,12 @@
+name: 09 basics variables configuration
+run-name: 09 basics variables ${{ github.run_number }}
+
+on:
+  workflow_dispatch:
+
+jobs:
+  print-hello-world:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Hello World
+        run: echo ${{ vars.MYCONFIGVAR }}
